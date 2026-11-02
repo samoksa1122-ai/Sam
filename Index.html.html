@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#60365f">
+<title>فرحتنا بالتميّز | ابتدائية ومتوسطة بحرة والروابي</title>
+<style>
+:root{--plum:#60365f;--mauve:#98639a;--rose:#f4eaf1;--gold:#c49b56;--ink:#382b3c;--paper:#fffdfb}
+*{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;color:var(--ink);background:linear-gradient(135deg,#f8eff6,#fffaf1 55%,#f4e9f1);min-height:100vh}
+header{padding:18px 6%;display:flex;justify-content:space-between;align-items:center;color:var(--plum);font-size:14px}
+.brand{font-weight:bold;line-height:1.8}.seal{border:1px solid #d9c4d7;border-radius:50%;width:54px;height:54px;display:grid;place-items:center;font-size:24px;background:#fff9}
+main{max-width:920px;margin:12px auto 50px;padding:0 18px}
+.hero{text-align:center;padding:52px 22px 36px;background:rgba(255,255,255,.76);border:1px solid #eadce8;border-radius:28px;box-shadow:0 18px 55px #60365f12;position:relative;overflow:hidden}
+.hero:before,.hero:after{content:"✦";position:absolute;color:#d2ad70;font-size:38px;opacity:.7}.hero:before{top:22px;right:30px}.hero:after{bottom:20px;left:32px}
+.kicker{color:var(--gold);font-weight:bold;letter-spacing:1px}
+h1{font-size:clamp(32px,6vw,54px);color:var(--plum);margin:15px 0 10px;line-height:1.5}
+.subtitle{font-size:clamp(17px,3vw,21px);line-height:2;color:#655268;margin:0 auto;max-width:680px}
+.badge{display:inline-block;margin-top:22px;padding:10px 22px;border-radius:30px;background:var(--plum);color:white;font-weight:bold}
+.section{margin-top:26px;background:var(--paper);border:1px solid #eadce8;border-radius:24px;padding:26px;box-shadow:0 12px 35px #60365f0b}
+h2{color:var(--plum);margin:0 0 18px;font-size:24px}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+button,.chip{border:0;cursor:pointer;border-radius:30px;padding:11px 18px;background:#ead9e9;color:var(--plum);font:inherit;font-weight:bold}
+button.active,.primary{background:var(--plum);color:#fff}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+label{display:block;font-weight:bold;color:#59445d;margin-bottom:7px}
+input,select,textarea{width:100%;border:1px solid #ddcbdc;border-radius:13px;padding:13px;font:inherit;background:#fff;color:var(--ink);outline-color:var(--mauve)}
+textarea{min-height:120px;resize:vertical;grid-column:1/-1}
+.full{grid-column:1/-1}.primary{padding:14px 24px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.card{border:1px solid #eadce8;background:linear-gradient(145deg,#fff,#fcf6fb);border-radius:18px;padding:18px;line-height:1.9;min-height:145px}
+.card .who{font-weight:bold;color:var(--plum)}.card .tag{font-size:12px;color:#916a91;background:#f2e7f1;border-radius:20px;padding:4px 10px;display:inline-block;margin:5px 0 10px}
+.card p{margin:4px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.empty{color:#88768a;text-align:center;padding:20px}
+.note{font-size:13px;line-height:1.9;color:#776b79;background:#f8f1f7;padding:12px 15px;border-radius:12px;margin-top:16px}
+footer{text-align:center;padding:25px;color:#79677b;font-size:14px;line-height:2}
+footer strong{color:var(--plum)}
+@media(max-width:600px){header{padding:14px 5%}.hero{padding:42px 17px 30px}.section{padding:20px 16px}form{grid-template-columns:1fr}textarea,.full{grid-column:1} }
+</style>
+</head>
+<body>
+<header><div class="brand">مدرسة ابتدائية ومتوسطة<br>بحرة والروابي</div><div class="seal" aria-label="نجمة التميّز">✧</div></header>
+<main>
+<section class="hero">
+<div class="kicker">بكل فخر وامتنان</div>
+<h1>فرحتنا بالتميّز<br>تكبر بكلماتكم</h1>
+<p class="subtitle">إنجاز نفخر به، وثمرة عطاء وجهود مخلصة.<br>شاركونا فرحتنا بكلمة تهنئة أو رسالة تقدير، فلكلماتكم أثر يبقى في القلب.</p>
+<div class="badge">نحتفي بالتميّز معًا ✨</div>
+</section>
+
+<section class="section">
+<h2>اختاري فئتك</h2>
+<div class="filters" id="filters">
+<button class="active" data-filter="الكل">الجميع</button>
+<button data-filter="ولية أمر">ولية أمر</button>
+<button data-filter="طالبة">طالبة</button>
+<button data-filter="منسوبات المدرسة">منسوبات المدرسة</button>
+<button data-filter="زائرة">زائرة</button>
+</div>
+<h2>اكتبي تهنئتك</h2>
+<form id="greetingForm">
+<div><label for="name">الاسم</label><input id="name" maxlength="45" placeholder="اكتبي اسمك" required></div>
+<div><label for="category">الفئة</label><select id="category" required><option value="">اختاري الفئة</option><option>ولية أمر</option><option>طالبة</option><option>منسوبات المدرسة</option><option>زائرة</option></select></div>
+<div class="full"><label for="message">رسالتك الجميلة</label><textarea id="message" maxlength="500" placeholder="اكتبي كلماتك التي تزيّن فرحتنا..." required></textarea></div>
+<button class="primary full" type="submit">إرسال التهنئة ♡</button>
+</form>
+<div class="note">ملاحظة: هذه نسخة تجريبية تحفظ الرسائل على الجهاز والمتصفح الذي أُرسلت منه فقط. لعرض رسائل جميع الزائرات على الموقع نفسه، يلزم ربط النموذج بقاعدة بيانات وخدمة نشر.</div>
+</section>
+
+<section class="section">
+<h2>كلماتكم تزيّن حكايتنا 💜</h2>
+<div id="greetings" class="cards"><div class="empty">كونوا أول من يشاركنا التهنئة.</div></div>
+</section>
+</main>
+<footer>
+<strong>مدرسة ابتدائية ومتوسطة بحرة والروابي</strong><br>
+تصميم وإعداد الموقع: <strong>سامية حكمي</strong><br>
+بكل فخر... نصنع التميّز معًا
+</footer>
+<script>
+const key='bahra-rawabi-greetings-v1';
+let filter='الكل';
+const form=document.getElementById('greetingForm'), box=document.getElementById('greetings');
+function getItems(){try{return JSON.parse(localStorage.getItem(key)||'[]')}catch{return []}}
+function render(){
+ const items=getItems().filter(x=>filter==='الكل'||x.category===filter);
+ box.innerHTML='';
+ if(!items.length){box.innerHTML='<div class="empty">لا توجد تهاني في هذه الفئة بعد. كوني أول من يشاركنا! ♡</div>';return}
+ [...items].reverse().forEach(x=>{
+  const card=document.createElement('article');card.className='card';
+  const who=document.createElement('div');who.className='who';who.textContent=x.name;
+  const tag=document.createElement('span');tag.className='tag';tag.textContent=x.category;
+  const msg=document.createElement('p');msg.textContent=x.message;
+  card.append(who,tag,msg);box.append(card);
+ });
+}
+document.querySelectorAll('[data-filter]').forEach(b=>b.addEventListener('click',()=>{
+ filter=b.dataset.filter;document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x===b));render();
+}));
+form.addEventListener('submit',e=>{
+ e.preventDefault();
+ const items=getItems();items.push({name:document.getElementById('name').value.trim(),category:document.getElementById('category').value,message:document.getElementById('message').value.trim()});
+ localStorage.setItem(key,JSON.stringify(items));form.reset();filter='الكل';
+ document.querySelectorAll('[data-filter]').forEach(x=>x.classList.toggle('active',x.dataset.filter==='الكل'));render();
+ box.scrollIntoView({behavior:'smooth',block:'start'});
+});
+render();
+</script>
+</body>
+</html>
